@@ -26,8 +26,8 @@ export const Navbar = () => {
               </Link>
             ))}
           </nav>
-          <button className="rounded-sm bg-red-600 py-1 px-3 text-white">
-            Log out
+          <button className="rounded bg-red-600 py-1 px-3 text-white">
+            Logout
           </button>
         </div>
       </div>

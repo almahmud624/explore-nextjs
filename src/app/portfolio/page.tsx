@@ -1,34 +1,38 @@
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
 
 const data = [
   {
     id: 1,
     title: "UI UX design",
+    url: "/portfolio/ui-ux",
     image:
       "https://img.freepik.com/free-vector/isometric-ui-ux-background_23-2149047258.jpg?w=740&t=st=1694242670~exp=1694243270~hmac=b564b08248caabc77ab079abf6c3f6a5a313c9983aae8253175021451db266dc",
   },
   {
     id: 2,
     title: "Websites",
+    url: "/portfolio/websites",
     image:
       "https://img.freepik.com/free-photo/homepage-seen-computer-screen_23-2149416730.jpg?w=740&t=st=1694242716~exp=1694243316~hmac=2900c085c2b23175cac08cc196370ad7a356c731fc4106ad8786a331e25af37a",
   },
   {
     id: 3,
     title: "Applications",
+    url: "/portfolio/applications",
     image:
       "https://img.freepik.com/free-photo/social-media-marketing-concept-marketing-with-applications_23-2150063136.jpg?w=740&t=st=1694243817~exp=1694244417~hmac=e9b66bd4cd0b69d79e27e051927d4c829488065d986e243ecd3d793cbfc4fdad",
   },
 ];
+
 const Portfolio = () => {
   return (
-    <div className="max-w-[972px] mx-auto py-16">
-      <h1 className="text-5xl font-bold">Our Works</h1>
-      <div className="mt-5">
-        <h5 className="font-bold mb-3">Choose a gallery</h5>
-        <div className="flex gap-7">
-          {data?.map((item) => (
+    <div className="mt-5">
+      <h5 className="font-bold mb-3">Choose a gallery</h5>
+      <div className="flex gap-7">
+        {data?.map((item) => (
+          <Link key={item?.id} href={item?.url}>
             <div className="border-[3px] rounded shadow-md border-black group">
               <div className="w-[250px] h-[250px] relative">
                 <Image
@@ -42,8 +46,8 @@ const Portfolio = () => {
                 </h4>
               </div>
             </div>
-          ))}
-        </div>
+          </Link>
+        ))}
       </div>
     </div>
   );
