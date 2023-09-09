@@ -8,18 +8,18 @@ export const Footer = () => {
         <h1 className="capitalize text-4xl font-bold">
           Join our secret society
         </h1>
-        <h5 className="text-gray-300">Be the first hear about the new post!</h5>
+        <h5 className="text-gray-600">Be the first hear about the new post!</h5>
         <form action="" method="post">
           <div className="">
             <input
               type="email"
               name=""
               placeholder="Enter your email here*"
-              className="bg-transparent border border-2 py-2 px-3 text-sm"
+              className="bg-transparent border border-2 py-2 px-3 text-sm border-gray-700 border-r-0"
             />
             <button
               type="submit"
-              className="px-3 border border-2 p-2 text-sm  bg-white text-black"
+              className="px-3 border border-2 p-2 text-sm  bg-gray-700 text-white border-gray-700"
             >
               Join
             </button>

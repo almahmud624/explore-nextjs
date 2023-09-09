@@ -22,7 +22,10 @@ const FooterLinks = () => {
     <div className="flex justify-end gap-10">
       {linksHeadings?.map(({ heading, links }) => (
         <div className="space-y-3">
-          <h3 key={heading} className="border-b px-5 pb-1 text-xl capitalize">
+          <h3
+            key={heading}
+            className="border-b border-gray-600 px-5 pb-1 text-xl capitalize"
+          >
             {heading}
           </h3>
           <div className="flex flex-col">
