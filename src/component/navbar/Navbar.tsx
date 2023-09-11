@@ -1,3 +1,5 @@
+"use client";
+import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import React from "react";
 
@@ -11,6 +13,7 @@ const links = [
 ];
 
 export const Navbar = () => {
+  const { status } = useSession();
   return (
     <div>
       <div className="flex justify-between">
@@ -26,9 +29,14 @@ export const Navbar = () => {
               </Link>
             ))}
           </nav>
-          <button className="rounded bg-red-600 py-1 px-3 text-white">
-            Logout
-          </button>
+          {status === "authenticated" && (
+            <button
+              onClick={() => signOut()}
+              className="rounded bg-red-600 py-1 px-3 text-white"
+            >
+              Logout
+            </button>
+          )}
         </div>
       </div>
     </div>

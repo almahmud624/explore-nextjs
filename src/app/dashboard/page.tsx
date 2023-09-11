@@ -1,19 +1,33 @@
 "use client";
 import React from "react";
-import { useEffect, useState } from "react";
 import useSWR from "swr";
 import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
+const fetcher = (...args: any) => fetch(...args).then((res) => res.json());
 const Dashboard = () => {
+  const { status, data: session } = useSession();
+  const router = useRouter();
   const { data, error, isLoading } = useSWR(
-    "https://jsonplaceholder.typicode.com/posts",
-    fetcher,
+    `/api/posts?username=${session?.user?.name}`,
+    fetcher
   );
-  const session = useSession();
-  console.log(session);
+  console.log(data);
+  if (status === "loading") {
+    return <p>Loading...</p>;
+  }
 
-  return <div>Dashboard</div>;
+  if (status === "unauthenticated") {
+    router.push("/dashboard/login");
+  }
+
+  if (status === "authenticated") {
+    return (
+      <div className="text-5xl font-bold grid place-items-center h-screen">
+        Dashboard
+      </div>
+    );
+  }
 };
 
 export default Dashboard;
