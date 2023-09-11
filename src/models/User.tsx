@@ -6,7 +6,6 @@ const userSchema = new Schema(
 	{
 		name: {
 			type: String,
-			unique: true,
 			requird: true,
 		},
 		email: {
@@ -16,7 +15,6 @@ const userSchema = new Schema(
 		},
 		password: {
 			type: String,
-
 			requird: true,
 		},
 	},
