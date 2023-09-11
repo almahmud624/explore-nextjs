@@ -12,7 +12,7 @@ const images = [
 ];
 
 async function getData() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const res = await fetch("http://localhost:3000/api/posts");
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
@@ -33,16 +33,16 @@ const Blog = async () => {
             <div className="w-[300px] h-[200px] relative">
               <Image
                 fill={true}
-                src={images[item?.id - 1]}
+                src={item?.img}
                 alt=""
                 className="object-cover"
               />
             </div>
             <div className="flex-1">
-              <Link href={`/blog/${item?.id}`}>
+              <Link href={`/blog/${item?._id}`}>
                 <h4 className="text-2xl font-bold">{item?.title}</h4>
               </Link>
-              <p>{item?.body}</p>
+              <p>{item?.desc}</p>
             </div>
           </div>
         ))}
