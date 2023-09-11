@@ -11,6 +11,11 @@ const images = [
   "https://img.freepik.com/free-photo/web-design-concepts-with-blurred-background_1134-82.jpg?w=740&t=st=1694409826~exp=1694410426~hmac=1a76e67133cedb658f2dfe2641b3bdc763229e52885cdb01b64c7f893b5b410f",
 ];
 
+export const metadata = {
+  title: "Blog - Get latest post",
+  description: "Stay with tech world",
+};
+
 async function getData() {
   const res = await fetch("http://localhost:3000/api/posts");
 
