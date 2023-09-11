@@ -1,12 +1,7 @@
-import React from 'react'
+import React from "react";
 
-const BlogLayout = ({children}:any) => {
-  return (
-    <div>
-        <h1 className='text-2xl font-bold'>This is Blog</h1>
-        {children}
-    </div>
-  )
-}
+const BlogLayout = ({ children }: any) => {
+  return <div className="max-w-[972px] py-10 pb-20 mx-auto">{children}</div>;
+};
 
-export default BlogLayout
+export default BlogLayout;
