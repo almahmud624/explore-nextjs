@@ -17,10 +17,12 @@ export const Navbar = () => {
   return (
     <div>
       <div className="flex justify-between">
-        <div className="logo font-semibold text-lg">
-          M<span className="text-red-300">@</span>PP
-          <span className="text-red-300">e</span>D
-        </div>
+        <Link href="/">
+          <div className="logo font-semibold text-lg">
+            M<span className="text-red-300">@</span>PP
+            <span className="text-red-300">e</span>D
+          </div>
+        </Link>
         <div className="flex items-center space-x-5">
           <nav className="space-x-5">
             {links?.map((link) => (
