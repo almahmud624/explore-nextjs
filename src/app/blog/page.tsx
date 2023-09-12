@@ -4,10 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import useSWR from "swr";
 
-export const metadata = {
-  title: "Blog - Get latest post",
-  description: "Stay with tech world",
-};
 const fetcher = (...args: any) => fetch(...args).then((res) => res.json());
 const Blog = () => {
   const {
